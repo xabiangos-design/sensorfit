@@ -68,7 +68,7 @@
 }
 
 .variable{
-    &:not(nth-last-of-type){
+    &:not(:last-of-type){
         border-bottom: 1px solid $color-border;
     }
     .variable-title{
