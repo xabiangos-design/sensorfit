@@ -1,0 +1,104 @@
+//Responsiveness
+$bp-xxsmall: 380px; // mobile tiny (iphone SE)
+$bp-xsmall: 576px; // mobile
+$bp-small: 48em; // 768px - tablet
+$bp-medium: 64em; // 1024px - desktop
+$bp-large: 85.375em; // 1366px - widescreen
+$bp-xlarge: 120em; // 1920px - huge
+//$bp-xxlarge: 160em;  2560px - fullhd - cambiamos
+
+$mobile: $bp-xsmall;
+$tablet: $bp-small;
+$desktop: $bp-medium;
+$widescreen: $bp-large;
+$huge: $bp-xlarge;
+$fullhd: $bp-xlarge;
+
+
+// Mobile
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;
+    }
+ }
+
+ // Tablet
+ @mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+ }
+ 
+ // Desktop
+ @mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+ }
+ 
+ // Widescreen
+ @mixin widescreen {
+    @media (min-width: #{$widescreen}) {
+        @content;
+    }
+ }
+
+// Huge
+@mixin huge {
+    @media (min-width: #{$huge}) {
+        @content;
+    }
+ }
+
+  // Fullhd
+  @mixin fullhd {
+    @media (min-width: #{$fullhd}) {
+        @content;
+    }
+ }
+
+
+  // Just mobile
+ @mixin mobile-only{
+    @media (max-width: $mobile) {
+        @content;
+      }
+ }
+
+ // Just tiny
+ @mixin tiny-only{
+    @media (max-width: $bp-xxsmall) {
+        @content;
+      }
+ }
+
+ // Just tablet
+ @mixin tablet-only{
+    @media (min-width: $mobile) and (max-width: $tablet) {
+        @content;
+      }
+ }
+
+ //Just tablet portrait
+  @mixin tablet-portrait-only{
+    @media (min-width: $tablet) and (max-width: $desktop) and (orientation:portrait){
+        @content;
+      }
+ }
+
+ //Touch: from mobile to tablet
+ @mixin touch{
+    @media (min-width: 0) and (max-width: $desktop) {
+        @content;
+      }
+ }
+
+
+ //Hide-show
+
+ .is-hidden-mobile{
+    display: none;
+    @include tablet{
+        display: block;
+    }
+ }

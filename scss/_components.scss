@@ -1,0 +1,108 @@
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 120%;
+    color: $color-dark;
+    @include gradient;
+    min-height: 100vh;
+}
+
+a{
+    color: $color-primary;
+}
+
+.container{
+    margin: 0 1rem;
+    max-width: 1200px;
+    @include tablet{
+        margin: 0 auto;
+    }
+}
+
+
+.variables-table{
+    margin: 2rem auto;
+    background-color: $color-white;
+    @include radius;
+    .table-header, .table-body{
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 0;
+            justify-content: space-between;
+        }
+    }
+    // header
+    .table-header{
+        font-size: .85rem;
+        color: $color-gray-dark;
+        border-bottom: 1px solid $color-border;
+    }
+    .header-list, .body-list{
+        li{
+            width: 20%;
+            padding: 1rem;
+        }
+    }
+    // body
+    .table-body{
+        padding-bottom: 1rem;
+        .body-list{
+            li{
+                &.has-border-left{
+                    border-left: 1px solid $color-border;
+                    border-right: 1px dotted $color-gray-dark;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                &.has-border-right{
+                    border-right: 1px solid $color-border;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.variable{
+    border-bottom: 1px solid $color-border;
+    .variable-title{
+        font-weight: $bold;
+    }
+    ul.measurements-list{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        li{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            width: auto;
+            padding: 0;
+            border: none;
+            @include tablet{
+                height: 1rem;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+//Progress bars custom
+.progress{
+    display: flex;
+    width: 100%;
+    position: relative;
+    height: 12px;
+    background-color: $color-background-light;
+    &.is-success{
+        background-color: $color-success;
+    }
+    &.is-error{
+        background-color: $color-error;
+    }
+}

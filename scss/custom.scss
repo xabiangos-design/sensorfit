@@ -1,0 +1,27 @@
+//Variables
+$color-primary:#2196F3;
+$color-dark:#202F3B;
+$color-gray-dark:#2c4051;
+$color-white:#ffffff;
+$color-border:#dddddd;
+$color-background-light:#f0f0f0;
+$color-background-dark:$color-dark;
+$color-error:#FB7390;
+$color-success:#19DB7E;
+
+$bold:500;
+
+//Mixins
+@mixin radius{
+    border-radius: 1rem;
+}
+
+@mixin gradient{
+    background: linear-gradient(180deg, rgba(245,245,245,1) 0%, rgba(187,219,244,1) 100%);
+}
+
+
+//Imports
+@import "minireset.scss";
+@import "responsiveness.scss";
+@import "components.scss";
