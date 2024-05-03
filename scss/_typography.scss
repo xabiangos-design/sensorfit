@@ -1,0 +1,29 @@
+
+
+@mixin inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+  }
+
+  @mixin inter-semibold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+  }
+
+  a{
+    color: $color-primary;
+    text-decoration: none;
+    &:hover, &:active{
+        color: $color-primary-dark;
+    }
+}
+
+.is-small{
+    font-size: .8rem;
+}

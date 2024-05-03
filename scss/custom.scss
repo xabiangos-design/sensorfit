@@ -1,15 +1,19 @@
 //Variables
 $color-primary:#2196F3;
+$color-primary-dark:#1c83d7;
 $color-dark:#202F3B;
-$color-gray-dark:#2c4051;
+$color-gray-dark:#364f65;
 $color-white:#ffffff;
 $color-border:#dddddd;
 $color-background-light:#f0f0f0;
 $color-background-dark:$color-dark;
 $color-error:#FB7390;
+$color-error-text:hsl(347, 91%, 57%);
 $color-success:#19DB7E;
 
 $bold:500;
+$font-size-small:.85rem;
+$font-size-regular:1rem;
 
 //Mixins
 @mixin radius{
@@ -20,8 +24,23 @@ $bold:500;
     background: linear-gradient(180deg, rgba(245,245,245,1) 0%, rgba(187,219,244,1) 100%);
 }
 
+@mixin inter-regular {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @mixin inter-semibold {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
 
 //Imports
 @import "minireset.scss";
 @import "responsiveness.scss";
+@import "layout.scss";
 @import "components.scss";
+@import "typography.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');

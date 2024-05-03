@@ -1,29 +1,13 @@
-body{
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    line-height: 120%;
-    color: $color-dark;
-    @include gradient;
-    min-height: 100vh;
-}
-
-a{
-    color: $color-primary;
-}
-
-.container{
-    margin: 0 1rem;
-    max-width: 1200px;
-    @include tablet{
-        margin: 0 auto;
-    }
-}
 
 
 .variables-table{
     margin: 2rem auto;
     background-color: $color-white;
     @include radius;
+    font-size: $font-size-small;
+    @include tablet{
+        font-size:$font-size-regular;
+    }
     .table-header, .table-body{
         ul{
             margin: 0;
@@ -39,17 +23,27 @@ a{
         font-size: .85rem;
         color: $color-gray-dark;
         border-bottom: 1px solid $color-border;
+        display: none;
+        @include tablet{
+            display: block;
+        }
     }
     .header-list, .body-list{
         li{
-            width: 20%;
             padding: 1rem;
+            width: 25%;
+            @include tablet{
+                width: 20%;
+            }
         }
     }
     // body
     .table-body{
-        padding-bottom: 1rem;
         .body-list{
+            flex-wrap: wrap;
+            @include tablet{
+                flex-wrap: nowrap;
+            }
             li{
                 &.has-border-left{
                     border-left: 1px solid $color-border;
@@ -62,15 +56,23 @@ a{
                     padding-left: 0;
                     padding-right: 0;
                 }
+                &.variable-title{
+                    width: 100%;
+                    @include tablet{
+                        width: 20%;
+                    }
+                }
             }
         }
     }
 }
 
 .variable{
-    border-bottom: 1px solid $color-border;
+    &:not(nth-last-of-type){
+        border-bottom: 1px solid $color-border;
+    }
     .variable-title{
-        font-weight: $bold;
+        @include inter-semibold;
     }
     ul.measurements-list{
         display: flex;
@@ -88,6 +90,12 @@ a{
                 align-items: center;
                 justify-content: space-between;
             }
+            .measuremente-value{
+                display: none;
+                @include tablet{
+                    display: flex;
+                }
+            }
         }
     }
 }
@@ -104,5 +112,13 @@ a{
     }
     &.is-error{
         background-color: $color-error;
+    }
+}
+
+//Evolution percentage
+.evolution{
+    margin-bottom: .5rem;
+    &.is-negative{
+        color: $color-error-text;
     }
 }
