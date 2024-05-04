@@ -73,6 +73,9 @@
     }
     .variable-title{
         @include inter-semibold;
+        @include mobile{
+            font-size:$font-size-regular;
+        }
     }
     ul.measurements-list{
         display: flex;
@@ -86,16 +89,17 @@
             padding: 0;
             border: none;
             height: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
             @include tablet{
-                height: 1rem;
-                align-items: center;
-                justify-content: space-between;
+                height: 1rem; 
             }
             .measuremente-value{
-                display: none;
-                @include tablet{
-                    display: flex;
-                }
+                text-align: right;
+                // display: none;
+                // @include tablet{
+                //     display: flex;
+                // }
             }
         }
     }
